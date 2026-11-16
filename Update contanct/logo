@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your House Painting Company</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Top Navigation & Enlarged Top-Left Logo */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5%;
+      background-color: #000000;
+      border-bottom: 2px solid #e65100;
+    }
+
+    /* Enlarged container (173px x 100px) with matching aspect ratio */
+    .logo-link {
+      display: inline-block;
+      width: 173px;
+      height: 100px;
+      overflow: hidden;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(2.1);
+      transform-origin: 50% 33.5%;
+      display: block;
+    }
+
+    .nav-cta {
+      background-color: #d83b1a;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background-color: #b72e12;
+    }
+
+    @media (max-width: 480px) {
+      .logo-link {
+        width: 145px;
+        height: 84px;
+      }
+      .nav-cta {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Get My Free Quote Section */
+    .quote-section {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 32px;
+      background-color: #faf8f6;
+      border: 1px solid #e5e0dc;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    .quote-section h2 {
+      font-size: 1.75rem;
+      color: #2c1a14;
+      margin-bottom: 8px;
+    }
+
+    .quote-section p {
+      color: #574944;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2c1a14;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cfc7c2;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #ffffff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #e65100;
+    }
+
+    .quote-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #d83b1a;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #b72e12;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP-LEFT LOGO HEADER (Old logo removed; only new logo renders here) -->
+  <header class="site-header">
+    <a href="/" class="logo-link">
+      <img src="The House Painting Company Logo-Picsart-BackgroundRemover.jpg" alt="Your House Painting Company Logo" />
+    </a>
+    <a href="#free-quote" class="nav-cta">Get My Free Quote</a>
+  </header>
+
+  <!-- GET MY FREE QUOTE SECTION -->
+  <section id="free-quote" class="quote-section">
+    <h2>Get My Free Quote</h2>
+    <p>Tell us about your painting project and we will send you a fast, no-obligation estimate.</p>
+
+    <form action="https://formsubmit.co/contact@yourhousepaintingcompany.com" method="POST">
+      <input type="hidden" name="_subject" value="New Free Quote Request - Your House Painting Company" />
+      <input type="hidden" name="_template" value="table" />
+      <!-- Optional: Uncomment and update URL to redirect after submission -->
+      <!-- <input type="hidden" name="_next" value="https://yourhousepaintingcompany.com/thank-you.html" /> -->
+
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="Name" required placeholder="John Smith" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="Email" required placeholder="john@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567" />
+      </div>
+
+      <div class="form-group">
+        <label for="service">Project Type</label>
+        <select id="service" name="Project Type">
+          <option value="Interior Painting">Interior Painting</option>
+          <option value="Exterior Painting">Exterior Painting</option>
+          <option value="Cabinet Refinishing">Cabinet Refinishing</option>
+          <option value="Commercial Painting">Commercial Painting</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Project Details (Rooms, Approximate Sq. Ft., Timeline)</label>
+        <textarea id="details" name="Project Details" rows="4" placeholder="Describe what you need painted..."></textarea>
+      </div>
+
+      <button type="submit" class="quote-btn">Get My Free Quote</button>
+    </form>
+  </section>
+
+</body>
+</html>
